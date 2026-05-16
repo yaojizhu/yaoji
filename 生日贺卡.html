@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生日快乐 昊洋</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  min-height:100vh;
+  /* 蓝白配色渐变：从浅蓝到柔白 */
+  background:linear-gradient(135deg, #cfe7ff, #e6f0fa, #f0f7ff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:"Microsoft Yahei",sans-serif;
+  overflow:hidden;
+}
+.card{
+  background:rgba(255,255,255,0.92);
+  padding:80px 60px;
+  border-radius:24px;
+  /* 卡片阴影改为淡蓝色调 */
+  box-shadow:0 10px 40px rgba(70, 130, 200, 0.2);
+  text-align:center;
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+h1{
+  font-size:48px;
+  /* 主标题改为深蓝色 */
+  color:#1e4a76;
+  letter-spacing:4px;
+  text-shadow:0 2px 8px rgba(30, 74, 118, 0.15);
+}
+.decor{
+  margin:20px 0;
+  font-size:28px;
+  /* 装饰文字改为天蓝色 */
+  color:#3b82b6;
+}
+audio{
+  display:none;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="decor">✨🎂✨</div>
+  <h1>生日快乐，昊洋</h1>
+  <div class="decor">✨虽然错过了你前面的24个生日，但我会珍惜今后的每一个✨</div>
+</div>
+
+<!-- 背景音乐：请将下方 src 路径修改为您自己的音乐文件 -->
+<audio id="bgm" autoplay loop preload="auto">
+  <source src="C:\Users\28738\Desktop\page\bgm.mp3" type="audio/mpeg">
+
+<script>
+// 解决浏览器禁止自动播放，点击任意位置播放
+document.addEventListener('click',()=>{
+  const audio=document.getElementById('bgm');
+  audio.play().catch(()=>{});
+},{once:true})
+</script>
+</body>
+</html>
